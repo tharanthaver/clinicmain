@@ -100,17 +100,18 @@ const BookingFormModal = ({ isOpen, onClose }: BookingFormModalProps) => {
             transition={{ type: "spring", duration: 0.5 }}
             className="relative z-10 w-full max-w-lg mx-4 bg-card rounded-3xl shadow-2xl overflow-hidden"
           >
-            {/* Decorative Header */}
-            <div className="relative bg-gradient-to-br from-primary via-primary to-primary-dark p-8 text-white overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
-              
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              {/* Decorative Header */}
+              <div className="relative bg-gradient-to-br from-primary via-primary to-primary-dark p-8 text-white overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+                
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
 
               <div className="relative">
                 <motion.div
