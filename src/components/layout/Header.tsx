@@ -64,7 +64,6 @@ const Header = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <ThemeToggle className="mr-2" />
               <Button variant="ghost" size="sm" className="gap-2">
                 <Phone className="w-4 h-4" />
                 +91 98765 43210
@@ -73,6 +72,7 @@ const Header = () => {
                 <Calendar className="w-4 h-4" />
                 Book Now
               </Button>
+              <ThemeToggle className="ml-2" />
             </div>
 
             {/* Mobile Menu Actions */}
