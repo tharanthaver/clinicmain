@@ -40,7 +40,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="container-custom section-padding pt-32 lg:pt-24 relative z-10">
+      <div className="container-custom section-padding pt-24 lg:pt-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
