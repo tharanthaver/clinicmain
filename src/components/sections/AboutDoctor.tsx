@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Award, GraduationCap, Heart, Stethoscope } from "lucide-react";
-import doctorImage from "@/assets/doctor-portrait.jpg";
 
 const highlights = [
   {
@@ -26,6 +25,8 @@ const highlights = [
 ];
 
 const AboutDoctor = () => {
+  const doctorImage = "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop";
+
   return (
     <section id="about" className="section-padding bg-background">
       <div className="container-custom">
