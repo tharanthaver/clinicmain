@@ -24,10 +24,10 @@ const highlights = [
   },
 ];
 
-const AboutDoctor = () => {
-  const doctorImage = "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop";
+  const AboutDoctor = () => {
+    const doctorImage = "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=1887&auto=format&fit=crop";
 
-  return (
+    return (
     <section id="about" className="section-padding bg-background">
       <div className="container-custom">
         <motion.div
