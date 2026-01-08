@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { openModal } = useBookingModal();
 
   return (
-    <section className="relative min-h-[90vh] flex items-center hero-gradient overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-start md:items-center hero-gradient overflow-hidden">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -40,7 +40,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="container-custom section-padding pt-24 lg:pt-24 relative z-10">
+      <div className="container-custom section-padding pt-20 lg:pt-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
