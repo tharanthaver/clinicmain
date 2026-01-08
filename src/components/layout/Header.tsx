@@ -4,6 +4,7 @@ import { Menu, X, Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
 import { useBookingModal } from "@/hooks/useBookingModal";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -63,6 +64,7 @@ const Header = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
+              <ThemeToggle className="mr-2" />
               <Button variant="ghost" size="sm" className="gap-2">
                 <Phone className="w-4 h-4" />
                 +91 98765 43210
@@ -73,17 +75,20 @@ const Header = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-foreground" />
-              ) : (
-                <Menu className="w-6 h-6 text-foreground" />
-              )}
-            </button>
+            {/* Mobile Menu Actions */}
+            <div className="flex items-center gap-3 lg:hidden">
+              <ThemeToggle />
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 rounded-lg hover:bg-secondary transition-colors"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6 text-foreground" />
+                ) : (
+                  <Menu className="w-6 h-6 text-foreground" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </motion.header>
