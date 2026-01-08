@@ -12,6 +12,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import GallerySection from "@/components/sections/GallerySection";
 import CTASection from "@/components/sections/CTASection";
 import ContactSection from "@/components/sections/ContactSection";
+import { SmileTransformationSlider } from "@/components/sections/SmileTransformationSlider";
 import BookingFormModal from "@/components/BookingFormModal";
 import { useBookingModal } from "@/hooks/useBookingModal";
 
@@ -77,6 +78,7 @@ const Index = () => {
           <GallerySection />
           <CTASection />
           <ContactSection />
+          <SmileTransformationSlider />
         </main>
 
         <Footer />
