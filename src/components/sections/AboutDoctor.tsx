@@ -24,8 +24,9 @@ const highlights = [
   },
 ];
 
-  const AboutDoctor = () => {
-    const doctorImage = "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=1887&auto=format&fit=crop";
+    const AboutDoctor = () => {
+    const doctorImage = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop";
+
 
     return (
     <section id="about" className="section-padding bg-background">
