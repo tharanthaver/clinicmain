@@ -49,22 +49,22 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            {/* Trust Badges Row */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.4 }}
-              className="flex flex-wrap gap-3"
-            >
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                3,000+ Happy Patients
-              </div>
-              <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-600 px-4 py-2 rounded-full text-sm font-medium">
-                <Award className="w-4 h-4" />
-                4.9★ Google Rating
-              </div>
-            </motion.div>
+              {/* Trust Badges Row */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
+                className="flex flex-col sm:flex-row flex-wrap gap-3"
+              >
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium w-fit">
+                  <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
+                  3,000+ Happy Patients
+                </div>
+                <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-600 px-4 py-2 rounded-full text-sm font-medium w-fit">
+                  <Award className="w-4 h-4" />
+                  4.9★ Google Rating
+                </div>
+              </motion.div>
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
@@ -106,36 +106,36 @@ const HeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="flex flex-wrap items-center gap-6 pt-4"
-            >
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.7 + i * 0.1 }}
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 border-2 border-background flex items-center justify-center text-xs font-medium text-primary"
-                    >
-                      {["A", "S", "R", "M"][i - 1]}
-                    </motion.div>
-                  ))}
+              {/* Trust Indicators */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 pt-4"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3, 4].map((i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.7 + i * 0.1 }}
+                        className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 border-2 border-background flex items-center justify-center text-xs font-medium text-primary flex-shrink-0"
+                      >
+                        {["A", "S", "R", "M"][i - 1]}
+                      </motion.div>
+                    ))}
+                  </div>
+                  <span className="text-sm text-muted-foreground">
+                    500+ patients this month
+                  </span>
                 </div>
-                <span className="text-sm text-muted-foreground">
-                  500+ patients this month
-                </span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Shield className="w-4 h-4 text-emerald-500" />
-                100% Safe & Hygienic
-              </div>
-            </motion.div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Shield className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                  100% Safe & Hygienic
+                </div>
+              </motion.div>
           </motion.div>
 
             {/* Right Image - Visible on all screens, but stacked on mobile */}
