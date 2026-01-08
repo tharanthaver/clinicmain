@@ -53,7 +53,7 @@ const AboutDoctor = () => {
                 <img
                   src={doctorImage}
                   alt="Dr. Rajesh Sharma - Senior Dental Surgeon"
-                  className="w-full h-[500px] lg:h-[600px] object-cover object-top"
+                  className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
               </div>
@@ -64,10 +64,10 @@ const AboutDoctor = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.4 }}
-                className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-glow"
+                className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-primary text-primary-foreground p-4 md:p-6 rounded-2xl shadow-glow"
               >
-                <p className="text-4xl font-bold">10+</p>
-                <p className="text-sm opacity-90">Years of Trust</p>
+                <p className="text-2xl md:text-4xl font-bold">10+</p>
+                <p className="text-xs md:text-sm opacity-90">Years of Trust</p>
               </motion.div>
             </div>
           </motion.div>

@@ -123,36 +123,36 @@ const TrustBadges = () => {
           transition={{ duration: 0.5 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
         >
-          {trustBadges.map((badge, index) => (
-            <motion.div
-              key={badge.label}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className={`relative flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br ${badge.bgColor} border ${badge.borderColor} hover:shadow-soft transition-all duration-300`}
-            >
-              {/* Animated Icon Container */}
+            {trustBadges.map((badge, index) => (
               <motion.div
-                whileHover={{ rotate: [0, -10, 10, 0] }}
-                transition={{ duration: 0.5 }}
-                className={`w-14 h-14 rounded-xl bg-card shadow-sm flex items-center justify-center flex-shrink-0`}
+                key={badge.label}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.4 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className={`relative flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 md:gap-4 p-4 md:p-5 rounded-2xl bg-gradient-to-br ${badge.bgColor} border ${badge.borderColor} hover:shadow-soft transition-all duration-300`}
               >
-                <badge.icon className={`w-7 h-7 ${badge.color}`} />
+                {/* Animated Icon Container */}
+                <motion.div
+                  whileHover={{ rotate: [0, -10, 10, 0] }}
+                  transition={{ duration: 0.5 }}
+                  className={`w-10 h-10 md:w-14 md:h-14 rounded-xl bg-card shadow-sm flex items-center justify-center flex-shrink-0`}
+                >
+                  <badge.icon className={`w-5 h-5 md:w-7 md:h-7 ${badge.color}`} />
+                </motion.div>
+                <div>
+                  <p className="text-xl md:text-3xl font-bold text-foreground">
+                    <AnimatedCounter 
+                      end={badge.value} 
+                      suffix={badge.suffix} 
+                      decimals={badge.decimals}
+                    />
+                  </p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider font-medium">{badge.label}</p>
+                </div>
               </motion.div>
-              <div>
-                <p className="text-2xl md:text-3xl font-bold text-foreground">
-                  <AnimatedCounter 
-                    end={badge.value} 
-                    suffix={badge.suffix} 
-                    decimals={badge.decimals}
-                  />
-                </p>
-                <p className="text-sm text-muted-foreground">{badge.label}</p>
-              </div>
-            </motion.div>
-          ))}
+            ))}
         </motion.div>
       </div>
     </section>

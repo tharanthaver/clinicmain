@@ -138,85 +138,85 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative">
-              {/* Decorative Ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-8 rounded-full border-2 border-dashed border-primary/20"
-              />
-
-              {/* Main Image */}
-              <div className="relative rounded-3xl overflow-hidden shadow-soft-xl">
+            {/* Right Image - Visible on all screens, but stacked on mobile */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="relative lg:block"
+            >
+              <div className="relative">
+                {/* Decorative Ring - Only on desktop for less clutter on mobile */}
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-8 rounded-full border-2 border-dashed border-primary/20 hidden lg:block"
+                />
+  
+                {/* Main Image */}
+                <div className="relative rounded-3xl overflow-hidden shadow-soft-xl">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={heroImage}
+                      alt="Modern dental clinic interior with advanced equipment"
+                      className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
+                    />
+                  </motion.div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
+                </div>
+  
+                {/* Floating Card - Experience - Hidden on small mobile */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="absolute -left-4 md:-left-8 bottom-10 md:bottom-20 bg-card p-3 md:p-4 rounded-2xl shadow-soft-lg border border-border/50 backdrop-blur-sm"
                 >
-                  <img
-                    src={heroImage}
-                    alt="Modern dental clinic interior with advanced equipment"
-                    className="w-full h-[500px] object-cover"
-                  />
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                      <Award className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xl md:text-2xl font-bold text-foreground">10+</p>
+                      <p className="text-xs md:text-sm text-muted-foreground">Years Experience</p>
+                    </div>
+                  </div>
                 </motion.div>
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
+  
+                {/* Floating Card - Rating - Hidden on small mobile */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.9, duration: 0.5 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="absolute -right-2 md:-right-4 top-10 md:top-20 bg-card p-3 md:p-4 rounded-2xl shadow-soft-lg border border-border/50 backdrop-blur-sm"
+                >
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/10 flex items-center justify-center">
+                      <div className="text-amber-500 text-base md:text-lg">★</div>
+                    </div>
+                    <div>
+                      <p className="text-xl md:text-2xl font-bold text-foreground">4.9/5</p>
+                      <p className="text-xs md:text-sm text-muted-foreground">Google Rating</p>
+                    </div>
+                  </div>
+                </motion.div>
+  
+                {/* Floating Badge - New */}
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                  className="absolute right-4 md:right-8 -top-4 bg-accent text-accent-foreground px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-glow-accent"
+                >
+                  Free Consultation
+                </motion.div>
               </div>
-
-              {/* Floating Card - Experience */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8, duration: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                className="absolute -left-8 bottom-20 bg-card p-4 rounded-2xl shadow-soft-lg border border-border/50 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-foreground">10+</p>
-                    <p className="text-sm text-muted-foreground">Years Experience</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Card - Rating */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                className="absolute -right-4 top-20 bg-card p-4 rounded-2xl shadow-soft-lg border border-border/50 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/10 flex items-center justify-center">
-                    <div className="text-amber-500 text-lg">★</div>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-foreground">4.9/5</p>
-                    <p className="text-sm text-muted-foreground">Google Rating</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge - New */}
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="absolute right-8 -top-4 bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-glow-accent"
-              >
-                Free Consultation
-              </motion.div>
-            </div>
-          </motion.div>
+            </motion.div>
         </div>
       </div>
     </section>

@@ -88,36 +88,50 @@ const Header = () => {
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-20 z-40 bg-background/95 backdrop-blur-md border-b border-border/50 lg:hidden"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-40 bg-background lg:hidden pt-20"
           >
-            <nav className="container-custom px-4 py-6 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-3 px-4 rounded-xl text-foreground font-medium hover:bg-secondary transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-border/50 space-y-3">
-                <Button variant="outline" className="w-full gap-2">
-                  <Phone className="w-4 h-4" />
-                  Call: +91 98765 43210
-                </Button>
-                <Button className="w-full gap-2" onClick={() => { setIsMobileMenuOpen(false); openModal(); }}>
-                  <Calendar className="w-4 h-4" />
-                  Book Appointment
-                </Button>
+            <nav className="container-custom px-6 py-10 flex flex-col h-full">
+              <div className="space-y-2">
+                {navLinks.map((link, index) => (
+                  <motion.a
+                    key={link.href}
+                    href={link.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-4 text-2xl font-bold text-foreground border-b border-border/50 flex items-center justify-between group"
+                  >
+                    {link.label}
+                    <motion.span 
+                      whileHover={{ x: 5 }}
+                      className="text-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      →
+                    </motion.span>
+                  </motion.a>
+                ))}
+              </div>
+              
+              <div className="mt-auto space-y-4 pb-10">
+                <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Contact Us</p>
+                <div className="grid gap-3">
+                  <Button variant="outline" size="lg" className="w-full gap-3 justify-start h-14 rounded-2xl">
+                    <Phone className="w-5 h-5 text-primary" />
+                    +91 98765 43210
+                  </Button>
+                  <Button size="lg" className="w-full gap-3 justify-start h-14 rounded-2xl shadow-soft" onClick={() => { setIsMobileMenuOpen(false); openModal(); }}>
+                    <Calendar className="w-5 h-5" />
+                    Book Appointment
+                  </Button>
+                </div>
               </div>
             </nav>
           </motion.div>

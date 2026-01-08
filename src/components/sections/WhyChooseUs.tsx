@@ -118,7 +118,7 @@ const WhyChooseUs = () => {
             </p>
 
             {/* Stats */}
-            <div className="flex gap-8 pt-4">
+            <div className="flex flex-wrap gap-6 md:gap-8 pt-4">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -126,18 +126,18 @@ const WhyChooseUs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
-                  className="text-center"
+                  className="flex-1 min-w-[100px] text-center md:text-left"
                 >
                   <motion.p
                     initial={{ scale: 0.5 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 + index * 0.1, type: "spring" }}
-                    className="text-4xl font-bold text-foreground"
+                    className="text-3xl md:text-4xl font-bold text-foreground"
                   >
                     {stat.value}
                   </motion.p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground whitespace-nowrap">{stat.label}</p>
                 </motion.div>
               ))}
             </div>

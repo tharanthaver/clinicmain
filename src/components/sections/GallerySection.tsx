@@ -51,7 +51,7 @@ const GallerySection = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
           {galleryImages.map((image, index) => (
             <motion.div
               key={image.title}
@@ -60,10 +60,10 @@ const GallerySection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
               className={`relative group overflow-hidden rounded-2xl ${
-                index === 1 ? "md:col-span-2 md:row-span-2" : ""
+                index === 1 ? "sm:col-span-2 sm:row-span-2" : ""
               }`}
             >
-              <div className={`relative ${index === 1 ? "h-full min-h-[300px] md:min-h-[400px]" : "aspect-square"}`}>
+              <div className={`relative ${index === 1 ? "h-full min-h-[250px] sm:min-h-[300px] md:min-h-[400px]" : "aspect-square sm:aspect-auto sm:h-full"}`}>
                 <img
                   src={image.src}
                   alt={image.alt}
