@@ -1,0 +1,7 @@
+{
+  "projectId": "e250b4b3-4f58-4523-8603-6b86533154de",
+  "createdAt": 1767847979358,
+  "startupCommands": [
+    "bun install; .\\node_modules\\.bin\\vite.exe --port 5173"
+  ]
+}
