@@ -40,7 +40,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="container-custom section-padding relative z-10">
+      <div className="container-custom section-padding pt-32 lg:pt-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
@@ -50,12 +50,12 @@ const HeroSection = () => {
             className="space-y-8"
           >
               {/* Trust Badges Row */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.4 }}
-                className="flex flex-col sm:flex-row flex-wrap gap-3"
-              >
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.4 }}
+                  className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-3"
+                >
                 <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium w-fit">
                   <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
                   3,000+ Happy Patients
@@ -107,14 +107,14 @@ const HeroSection = () => {
             </motion.div>
 
               {/* Trust Indicators */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 pt-4"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                  className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-5 sm:gap-6 pt-4"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="flex -space-x-1 sm:-space-x-2">
                     {[1, 2, 3, 4].map((i) => (
                       <motion.div
                         key={i}
