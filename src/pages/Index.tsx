@@ -74,11 +74,11 @@ const Index = () => {
           <AboutDoctor />
           <ServicesSection />
           <WhyChooseUs />
+          <SmileTransformationSlider />
           <TestimonialsSection />
           <GallerySection />
           <CTASection />
           <ContactSection />
-          <SmileTransformationSlider />
         </main>
 
         <Footer />
