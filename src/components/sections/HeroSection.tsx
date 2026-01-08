@@ -49,22 +49,22 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-              {/* Trust Badges Row */}
+                {/* Trust Badges Row */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.4 }}
-                  className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-3"
+                  className="flex flex-row flex-wrap gap-2 sm:gap-3"
                 >
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium w-fit">
-                  <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                  3,000+ Happy Patients
-                </div>
-                <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-600 px-4 py-2 rounded-full text-sm font-medium w-fit">
-                  <Award className="w-4 h-4" />
-                  4.9★ Google Rating
-                </div>
-              </motion.div>
+                  <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-3 sm:px-4 py-2 rounded-full text-[13px] sm:text-sm font-medium w-fit">
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                    3,000+ Happy Patients
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-600 px-3 sm:px-4 py-2 rounded-full text-[13px] sm:text-sm font-medium w-fit">
+                    <Award className="w-3.5 h-3.5 sm:w-4 h-4" />
+                    4.9★ Google Rating
+                  </div>
+                </motion.div>
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
@@ -106,12 +106,12 @@ const HeroSection = () => {
               </Button>
             </motion.div>
 
-              {/* Trust Indicators */}
+                {/* Trust Indicators */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
-                  className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-5 sm:gap-6 pt-4"
+                  className="flex flex-row flex-wrap items-center gap-x-6 gap-y-4 pt-4"
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex -space-x-1 sm:-space-x-2">
